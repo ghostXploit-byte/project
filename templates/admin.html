@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+
+<h1>Admin Dashboard</h1>
+<a href="/logout">Logout</a>
+<hr>
+
+{% if submissions %}
+    {% for s in submissions %}
+        <div style="border:1px solid #000; padding:10px; margin-bottom:10px;">
+            <p><b>Name:</b> {{ s.name }}</p>
+            <p><b>Email:</b> {{ s.email }}</p>
+            <p><b>Phone:</b> {{ s.tel }}</p>
+            <p><b>Message:</b> {{ s.message }}</p>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No submissions yet.</p>
+{% endif %}
+
+</body>
+</html>
